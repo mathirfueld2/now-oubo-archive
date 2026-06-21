@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>欧博 · 资料索引与信息整理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fbe9e7 0%, #ffd7c4 45%, #ffc8b0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.7;
+            color: #2d2a28;
+            margin: 0;
+        }
+
+        .card {
+            max-width: 780px;
+            width: 100%;
+            background: #fffffffa;
+            backdrop-filter: blur(1px);
+            border-radius: 40px 40px 36px 36px;
+            box-shadow: 0 20px 40px -12px rgba(140, 70, 40, 0.25), 0 8px 20px rgba(0,0,0,0.03);
+            padding: 2.8rem 2.2rem 3rem;
+            transition: box-shadow 0.25s;
+            border: 1px solid rgba(255, 215, 190, 0.2);
+        }
+
+        @media (max-width: 540px) {
+            body { padding: 1.2rem 0.9rem; }
+            .card { padding: 2rem 1.4rem 2.4rem; border-radius: 32px; }
+        }
+
+        .hero-tag {
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #b7805e;
+            background: #f7e7de;
+            display: inline-block;
+            padding: 0.2rem 0.9rem;
+            border-radius: 40px;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 580;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #3a2c24;
+            margin-bottom: 1rem;
+        }
+        h1 small {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #7a5f4e;
+            margin-top: 0.35rem;
+            letter-spacing: 0.02em;
+        }
+
+        .opening {
+            font-size: 1.08rem;
+            background: #f9f1ec;
+            padding: 1.2rem 1.5rem;
+            border-radius: 28px;
+            margin: 1.2rem 0 1.6rem;
+            border-left: 4px solid #dbaa8a;
+            color: #3b312b;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #2f2a26;
+        }
+
+        a {
+            color: #a45f3a;
+            text-decoration: none;
+            font-weight: 510;
+            padding: 0.05rem 0.1rem;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        a:hover {
+            border-bottom-color: #b47a5c;
+            color: #7f4b2c;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 1.5rem;
+            margin: 1.8rem 0 1.6rem;
+            padding: 0.2rem 0 0.2rem;
+        }
+        .feature-item {
+            flex: 1 1 180px;
+            background: #fcf7f4;
+            border-radius: 30px;
+            padding: 0.9rem 1.3rem;
+            border: 1px solid #edd9cd;
+            box-shadow: 0 2px 6px rgba(180, 110, 70, 0.04);
+            color: #352f2a;
+            font-size: 0.95rem;
+            list-style: none;
+            display: flex;
+            align-items: baseline;
+            gap: 0.4rem;
+        }
+        .feature-item::before {
+            content: "▹";
+            color: #b97a57;
+            font-size: 1.1rem;
+            margin-right: 0.3rem;
+        }
+
+        .scene-note {
+            background: #f4eae3;
+            border-radius: 26px;
+            padding: 1.3rem 1.6rem;
+            margin: 1.4rem 0 1.2rem;
+            font-size: 0.98rem;
+            color: #3d312a;
+            border: 1px solid #e6cdbc;
+        }
+
+        .faq-mini {
+            background: #fffcf9;
+            border-radius: 28px;
+            padding: 1.2rem 1.4rem 1rem;
+            margin: 1.6rem 0 0.8rem;
+            border: 1px solid #e8d7cb;
+        }
+        .faq-mini summary {
+            font-weight: 540;
+            cursor: pointer;
+            color: #5e4132;
+            padding: 0.2rem 0;
+            font-size: 0.98rem;
+        }
+        .faq-mini p {
+            margin-top: 0.6rem;
+            margin-bottom: 0.3rem;
+            font-size: 0.92rem;
+            color: #423a35;
+        }
+
+        .closing {
+            margin-top: 2rem;
+            font-size: 0.95rem;
+            border-top: 1px solid #edd7cb;
+            padding-top: 1.5rem;
+            color: #4e3d33;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .closing span {
+            opacity: 0.6;
+            font-size: 0.8rem;
+        }
+
+        .button-like {
+            display: inline-block;
+            background: #f1ddd2;
+            color: #442f24;
+            border-radius: 60px;
+            padding: 0.25rem 1.2rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            border: 1px solid #dbb9a6;
+            transition: background 0.2s, box-shadow 0.2s;
+            margin-top: 0.1rem;
+        }
+        .button-like:hover {
+            background: #e7cdbc;
+            box-shadow: 0 2px 8px rgba(130, 70, 40, 0.08);
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ebd6c9;
+            margin: 1.2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="hero-tag">📂 信息整理 · 索引方向</div>
+        <h1>
+            欧博
+            <small>从零散到有序 · 资料与线索的汇集</small>
+        </h1>
+
+        <div class="opening">
+            日常浏览中，许多值得留存的片段往往隐于深层链接之下。<br>
+            一个相对系统的整理方式，可以降低信息磨损。<strong>欧博</strong> 所承载的内容，正在以此为起点。
+        </div>
+
+        <p>
+            过去一段时间，陆续对多个来源的记录、条目与参考链路做了归并。这个过程不追求大而全，而是侧重可回溯、可交叉验证——这也是 <a href="https://now-oubo.com">欧博</a> 在索引层面最基础的逻辑：让散落的信息节点重新获得上下文。
+        </p>
+
+        <p>
+            当前覆盖的主题涉及工具使用、工作流简记、以及少量背景注释。每一条记录都尽量保留原始出处或时间标记，便于后续核对。如果你也在做类似的信息规整，或许可以从中找到一些可复用的结构。
+        </p>
+
+        <div class="feature-grid">
+            <div class="feature-item">条目按主题聚类，辅以标签</div>
+            <div class="feature-item">保留原文片段与超链接锚点</div>
+            <div class="feature-item">定期增量更新，避免沉积</div>
+            <div class="feature-item">轻量标注：可信度 / 待核实</div>
+        </div>
+
+        <div class="scene-note">
+            <strong>▸ 一个典型的使用场景</strong><br>
+            假设你在某个讨论中看到一条模糊的方法引用。通过 <a href="https://now-oubo.com">欧博</a> 内的索引，可以快速定位到原始笔记、相关替代方案以及后续的讨论链接——整个过程不依赖全文检索之外的额外工具，只需跟随页面内的交叉引用即可。
+        </div>
+
+        <details class="faq-mini">
+            <summary>📌 FAQ 摘要 · 关于索引本身</summary>
+            <p><strong>内容是否会持续更新？</strong> 是。更新节奏大致为每两到四周，主要补充新发现的材料以及修正失效链接。</p>
+            <p><strong>是否可以复制或二次整理？</strong> 可以。所有条目均为公开可访问的参考，不涉及保密或受限内容，引用时建议保留原链接。</p>
+            <p><strong>索引结构有分类标准吗？</strong> 目前采用扁平标签 + 日期倒序，后续可能会根据条目数量增加领域分区。</p>
+        </details>
+
+        <hr>
+
+        <p style="font-size: 0.94rem;">
+            如果你对信息回溯、参考管理或类似索引方式感兴趣，可以直接浏览 <a href="https://now-oubo.com">欧博</a> 的当前页面。所有内容均以 HTML 呈现，无额外登录门槛。
+        </p>
+
+        <div class="closing">
+            <span>最近整理批次 · 2025-04</span>
+            <span class="button-like">索引结构 v1.2</span>
+        </div>
+    </div>
+</body>
+</html>

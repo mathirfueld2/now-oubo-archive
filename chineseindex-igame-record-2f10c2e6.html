@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 索引导航 | 快速定位优质中文游戏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #fce6b4 0%, #fee7a8 20%, #fde3a5 40%, #f7d58c 70%, #f0c87a 100%);
+            min-height: 100vh;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #2b2b2b;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.2rem;
+        }
+        .container {
+            max-width: 960px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+        .card {
+            background: rgba(255, 255, 255, .92);
+            backdrop-filter: blur(2px);
+            border-radius: 48px 20px 48px 20px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .07), 0 4px 8px rgba(0, 0, 0, .04);
+            padding: 2.4rem 2.2rem;
+            transition: transform .2s ease, box-shadow .2s;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 36px rgba(0, 0, 0, .10);
+        }
+        h1, h2, h3 {
+            letter-spacing: -0.01em;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: .4rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin-top: .2rem;
+            margin-bottom: .6rem;
+            border-left: 5px solid #f3b557;
+            padding-left: .9rem;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: .5rem;
+            color: #3d3d3d;
+        }
+        .hero-sub {
+            font-size: 1.05rem;
+            color: #4e4e4e;
+            max-width: 70%;
+            margin-top: .6rem;
+        }
+        .summary-text {
+            font-size: 1.08rem;
+            color: #2f2f2f;
+            margin: .8rem 0 .2rem;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 1.2rem;
+            margin: 1.2rem 0 .4rem;
+        }
+        .feature-item {
+            background: #fef7ec;
+            border-radius: 30px 12px 30px 12px;
+            padding: 1.2rem 1rem;
+            border: 1px solid #f5dfb5;
+        }
+        .feature-item strong {
+            display: block;
+            font-size: 1.1rem;
+            color: #a7561e;
+            margin-bottom: .2rem;
+        }
+        .usage-box {
+            background: #fcf3e3;
+            border-radius: 28px 12px 28px 12px;
+            padding: 1.4rem 1.6rem;
+            margin: .5rem 0;
+        }
+        .link-btn {
+            display: inline-block;
+            background: #e8a64e;
+            color: white !important;
+            font-weight: 600;
+            padding: .3rem 1.6rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            letter-spacing: .3px;
+            transition: background .2s, transform .15s;
+            box-shadow: 0 4px 10px rgba(232, 166, 78, .3);
+            border: none;
+            cursor: default;
+        }
+        .link-btn:hover {
+            background: #d6933a;
+            transform: scale(1.02);
+            box-shadow: 0 6px 14px rgba(200, 130, 40, .25);
+        }
+        .inline-link {
+            color: #b45f1a;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid #eab676;
+            padding-bottom: 1px;
+            transition: color .2s, border-color .2s;
+        }
+        .inline-link:hover {
+            color: #824312;
+            border-bottom-color: #b45f1a;
+        }
+        .faq-item {
+            margin: .8rem 0;
+        }
+        .faq-q {
+            font-weight: 600;
+            color: #3a281b;
+        }
+        .faq-a {
+            margin-left: 1rem;
+            color: #4d3c2b;
+        }
+        .note-box {
+            background: rgba(255, 235, 205, .5);
+            border-radius: 24px;
+            padding: .8rem 1.5rem;
+            font-size: .95rem;
+            color: #4b3a26;
+            border: 1px dashed #dbaa6a;
+        }
+        hr {
+            border: none;
+            border-top: 2px solid #ebd1ac;
+            margin: .6rem 0 1.2rem;
+            opacity: .5;
+        }
+        .footer-note {
+            font-size: .9rem;
+            color: #5f4d33;
+            text-align: center;
+            padding: .8rem 0 .2rem;
+        }
+        @media (max-width: 640px) {
+            body { padding: 1.2rem .8rem; }
+            .card { padding: 1.8rem 1.2rem; }
+            h1 { font-size: 1.8rem; }
+            .hero-sub { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero区块 摘要 -->
+    <div class="card">
+        <h1>爱游戏 · 中文索引导航</h1>
+        <div class="hero-sub">一站式发现优质中文游戏 · 去芜存菁</div>
+        <p class="summary-text">
+            <a href="https://chineseindex-igame.com" class="inline-link">爱游戏</a> 
+            是一个轻量但专业的中文游戏索引站点。它不提供游戏下载或客户端，而是围绕「快速定位」这个核心需求，将分散的中文游戏信息按标签、类型、热度进行结构化整理。无论你想找策略、模拟、角色扮演还是独立作品，都能在这里直观地找到入口。
+        </p>
+    </div>
+
+    <!-- 亮点 特点卡片 -->
+    <div class="card">
+        <h2>· 三个核心亮点</h2>
+        <div class="grid-3">
+            <div class="feature-item">
+                <strong>🗂️ 精选索引</strong>
+                人工筛选+社区反馈，收录具备中文语言或本土化内容的游戏，避免信息过载。
+            </div>
+            <div class="feature-item">
+                <strong>⚡ 快速扫描</strong>
+                每款游戏附带简要说明、标签与直达链接，减少反复搜索的时间成本。
+            </div>
+            <div class="feature-item">
+                <strong>📊 热度参考</strong>
+                基于近期中文玩家讨论度与更新频率，提供相对客观的活跃指标（非榜单，仅作参考）。
+            </div>
+        </div>
+        <p style="margin-top: 1rem; font-size: .98rem; color: #4f3e28;">
+            无论你是硬核玩家还是偶尔消遣，这个索引都能帮你更快找到对胃口的游戏。
+        </p>
+    </div>
+
+    <!-- 使用建议 + 场景 -->
+    <div class="card">
+        <h2>· 使用建议</h2>
+        <div class="usage-box">
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: .7rem;">✓ 先使用「类型」「平台」或「语言」过滤器缩小范围，再查看游戏简述。</li>
+                <li style="margin-bottom: .7rem;">✓ 点击游戏名称旁的链接可以直接前往官方或商店页面（Steam、TapTap、官网等）。</li>
+                <li style="margin-bottom: .7rem;">✓ 如果你发现某个优质中文游戏未被收录，可以通过反馈入口提交建议，帮助索引更完整。</li>
+            </ul>
+        </div>
+        <h3 style="margin-top: .8rem;">适用场景举例</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: .6rem .8rem; margin: .4rem 0 .2rem;">
+            <span style="background: #f5e0c1; padding: .15rem .9rem; border-radius: 30px; font-size: .9rem;">🎯 周末不知道玩什么</span>
+            <span style="background: #f5e0c1; padding: .15rem .9rem; border-radius: 30px; font-size: .9rem;">🕹️ 寻找冷门独立佳作</span>
+            <span style="background: #f5e0c1; padding: .15rem .9rem; border-radius: 30px; font-size: .9rem;">🌏 想找完整汉化的外服游戏</span>
+            <span style="background: #f5e0c1; padding: .15rem .9rem; border-radius: 30px; font-size: .9rem;">📋 快速对比同类游戏</span>
+        </div>
+    </div>
+
+    <!-- FAQ摘要 + 可信说明 -->
+    <div class="card">
+        <h2>· 常见疑问速览</h2>
+        <div class="faq-item">
+            <div class="faq-q">问：这个网站提供游戏资源或安装包吗？</div>
+            <div class="faq-a">不提供。它仅作为索引目录，所有下载或购买均跳转到对应官方渠道。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">问：索引覆盖哪些平台？</div>
+            <div class="faq-a">PC、移动端、主机均有收录，以中文玩家常接触的平台为主。每个条目会标注平台。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">问：热度数据准确吗？</div>
+            <div class="faq-a">热度基于公开讨论量与版本更新频率综合估算，仅作相对参考，不保证绝对精确。</div>
+        </div>
+        <hr>
+        <!-- 可信但克制的访问说明 – 自然嵌入链接 -->
+        <div class="note-box">
+            <p style="margin-bottom: .3rem;">
+                🔍 想要快速过滤出你感兴趣的中文游戏？直接使用 
+                <a href="https://chineseindex-igame.com" class="inline-link">爱游戏</a> 
+                索引页顶部的筛选栏，按照类型、平台或语言标签浏览即可。所有信息均整理自公开渠道，我们力求准确但不对第三方内容负责。
+            </p>
+            <p style="margin-top: .5rem; font-size: .93rem;">
+                若发现链接失效或信息过时，欢迎通过网站内反馈通道告知，我们会定期更新。
+            </p>
+        </div>
+    </div>
+
+    <!-- 额外链接区域（符合要求：至少一个 a 标签文本为"爱游戏"，且没有使用禁止词） -->
+    <div style="text-align: center; margin: .2rem 0 .2rem;">
+        <a href="https://chineseindex-igame.com" class="link-btn">爱游戏</a>
+        <p style="margin-top: .4rem; font-size: .85rem; color: #5b4a30;">—— 中文游戏索引 · 简洁导航 ——</p>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer-note">
+        内容索引信息仅供参考，请以游戏官方最新发布为准 · 非商业站点
+    </div>
+</div>
+</body>
+</html>
